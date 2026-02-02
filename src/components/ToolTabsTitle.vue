@@ -1,0 +1,44 @@
+<script setup lang="ts">
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const smAndLarger = breakpoints.greaterOrEqual('sm')
+</script>
+
+<template>
+  <Dialog>
+    <DialogTrigger as-child>
+      <Button class="rounded-full" variant="ghost" :size="smAndLarger ? 'sm' : 'icon-sm'">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="currentColor">
+          <path
+            d="M83.8969 51.3161c0-0 .0114.0808.3206-.2296.7147 1.5288 1.4715 3.3676 1.4742 5.2074.0661 44.3213.0516 88.6427.0516 132.9641 0 1.7833 0 3.5666 0 5.4127 5.3308 0 10.2055 0 15.4471 0 0-27.0924 0-53.8432 0-80.8498 10.1825 0 20.0181.4449 29.7914-.1437 7.5326-.4537 13.4852 1.103 18.2321 7.352 1.4231 1.8734 4.5577 2.4467 7.5435 3.9315 0-13.2734 0-24.8782 0-37.9493-3.0888 1.62-6.101 2.259-7.5193 4.1157-4.7437 6.2096-10.6617 7.8615-18.2282 7.3919-9.8796-.6132-19.826-.1501-29.7086-.1501 0-25.7002 0-50.7679 0-76.1919 1.9142 0 3.5522 0 5.1901 0 19.828-.0001 39.6679.3973 59.4781-.1951 7.9625-.2381 14.2307 1.2756 18.9603 7.862 1.9814 2.7593 4.623 3.473 7.425 1.9982 0-8.4483 0-16.5471 0-24.8622-1.8311 0-3.3219-0-4.8127 0-32.3246.0004-64.6496.0705-96.9734-.0933-3.7501-.019-5.4124 1.0968-6.8529 4.5899-15.7866 38.2829-31.7837 76.479-47.7193 114.7005-8.4464 20.2587-16.9344 40.5004-25.2362 60.8182-.7073 1.7311-.9543 4.9683.0122 5.7572 1.458 1.1901 4.2309 1.2808 6.3387 1.0106 1.8727-.2401 3.6854-1.4683 5.3793-2.499 11.3941-6.9334 19.3562-16.6561 23.4252-29.4113C57.0881 126.8304 68.168 91.7786 79.4634 56.7962c.6737-2.0864 2.9193-3.6651 4.4334-5.4801"
+          />
+        </svg>
+        <span class="font-semibold tracking-tighter text-lg hidden sm:inline select-none">
+          FontViewer
+        </span>
+      </Button>
+    </DialogTrigger>
+    <DialogContent class="lg:max-w-prose">
+      <DialogHeader>
+        <DialogTitle>Welcome to FontViewer</DialogTitle>
+      </DialogHeader>
+      <p class="tracking-wide text-sm font-extralight">
+        The site was inspired by
+        <a href="https://fontdrop.info" class="underline">FontDrop</a> and aims to provide a more
+        intuitive interface for inspecting and extracting data from font files. If you would like to
+        request a feature, provide feedback or contribute to the site, you can check out the
+        <a href="https://github.com/TheRobertLing/FontViewer" class="underline">Github</a>
+        repo. Enjoy.
+      </p>
+    </DialogContent>
+  </Dialog>
+</template>
