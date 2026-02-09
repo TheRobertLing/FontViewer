@@ -27,7 +27,7 @@ const { toggleSidebar } = useSidebar()
         <span class="sr-only">Toggle Sidebar</span>
       </Button>
     </TooltipTrigger>
-    <TooltipContent side="right" align="center">
+    <TooltipContent side="bottom" align="start">
       <div class="flex items-center gap-2">
         Toggle Sidebar
         <KbdGroup>

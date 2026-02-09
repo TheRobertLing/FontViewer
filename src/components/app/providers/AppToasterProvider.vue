@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import 'vue-sonner/style.css'
-
 import { Toaster } from '@/components/ui/sonner'
+
+import 'vue-sonner/style.css'
 </script>
 
 <template>
   <slot />
   <Toaster
-    position="bottom-center"
-    :closeButton="true"
+    position="bottom-right"
     closeButtonPosition="top-right"
     rich-colors
+    closeButton
+    expand
   />
 </template>
