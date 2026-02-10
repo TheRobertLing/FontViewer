@@ -10,6 +10,7 @@ import {
 import { useFontFileLoaders } from '@/composables/font-file-loaders'
 import { useTemplateRef } from 'vue'
 import { Upload } from 'lucide-vue-next'
+import AppTabLayout from '../layout/AppTabLayout.vue'
 
 const dropZoneEl = useTemplateRef('dropZoneEl')
 
@@ -18,7 +19,7 @@ const { openFileDialog, isOverDropZone, fontFileInfo, formattedFileSize } =
 </script>
 
 <template>
-  <div class="flex flex-1 flex-col gap-4 p-4 size-full">
+  <AppTabLayout>
     <Item variant="outline">
       <ItemContent>
         <ItemTitle class="line-clamp-1">
@@ -49,5 +50,5 @@ const { openFileDialog, isOverDropZone, fontFileInfo, formattedFileSize } =
         </EmptyContent>
       </Empty>
     </div>
-  </div>
+  </AppTabLayout>
 </template>

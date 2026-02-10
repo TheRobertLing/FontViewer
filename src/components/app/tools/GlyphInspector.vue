@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppTabLayout from '../layout/AppTabLayout.vue'
+</script>
 
 <template>
-  <div>GlyphInspector</div>
+  <AppTabLayout> test </AppTabLayout>
 </template>
