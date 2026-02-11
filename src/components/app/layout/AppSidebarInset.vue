@@ -15,7 +15,7 @@ const { tabs, activeTab } = useFontToolTabsContext()!
 
 <template>
   <SidebarInset>
-    <div class="flex shrink-0 items-center gap-2 border-b p-2">
+    <header class="flex shrink-0 items-center gap-2 border-b p-2">
       <SidebarTrigger />
       <Breadcrumb>
         <BreadcrumbList>
@@ -28,8 +28,8 @@ const { tabs, activeTab } = useFontToolTabsContext()!
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-    </div>
-    <TabsContent v-for="tab in tabs" :key="tab.id" :value="tab.id">
+    </header>
+    <TabsContent v-for="tab in tabs" :key="tab.id" :value="tab.id" class="overflow-auto">
       <component :is="tab.content" />
     </TabsContent>
   </SidebarInset>

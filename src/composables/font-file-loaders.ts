@@ -73,17 +73,17 @@ function useFontFileLoaders(dropZoneEl: TemplateRef<HTMLElement>) {
   const { openFileDialog, onFileLoaded: onDialogFileLoaded } = useFontFileDialog()
   const { isOverDropZone, onFileLoaded: onDropFileLoaded } = useFontFileDragNDrop(dropZoneEl)
 
-  function handleFileLoaded(file: File) {
+  const formattedFileSize = computed(() => {
+    if (!fontFileInfo.value) return null
+    return formatFileSize(fontFileInfo.value.size)
+  })
+
+  const handleFileLoaded = (file: File) => {
     fontFileInfo.value = { name: file.name, size: file.size }
   }
 
   onDialogFileLoaded(handleFileLoaded)
   onDropFileLoaded(handleFileLoaded)
-
-  const formattedFileSize = computed(() => {
-    if (!fontFileInfo.value) return null
-    return formatFileSize(fontFileInfo.value.size)
-  })
 
   return { openFileDialog, isOverDropZone, fontFileInfo, formattedFileSize }
 }

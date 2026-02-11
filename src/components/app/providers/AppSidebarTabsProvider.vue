@@ -8,7 +8,7 @@ const { activeTab } = useFontToolTabsProvider()
 
 <template>
   <Tabs orientation="vertical" v-model="activeTab" :unmount-on-hide="false">
-    <SidebarProvider>
+    <SidebarProvider class="h-dvh w-screen">
       <slot />
     </SidebarProvider>
   </Tabs>

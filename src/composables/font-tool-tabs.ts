@@ -1,5 +1,5 @@
 import FontLoader from '@/components/app/tools/FontLoader.vue'
-import GlyphInspector from '@/components/app/tools/GlyphInspector.vue'
+import GlyphInspector from '@/components/app/tools/glyph-inspector/GlyphInspector.vue'
 import { useFontStore } from '@/stores/font-store'
 import { createInjectionState } from '@vueuse/core'
 import { TextSearch, Upload } from 'lucide-vue-next'

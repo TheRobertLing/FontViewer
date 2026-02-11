@@ -21,7 +21,7 @@ const { tabs } = useFontToolTabsContext()!
 </script>
 
 <template>
-  <Sidebar variant="inset">
+  <Sidebar>
     <SidebarHeader>
       <AppSidebarTitle />
     </SidebarHeader>
