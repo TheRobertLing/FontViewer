@@ -98,7 +98,7 @@ function useGlyphInspector() {
     return {
       index,
       name: glyph.name || '',
-      unicode: glyph.unicode ?? null,
+      unicode: glyph.unicode,
       advanceWidth: glyph.advanceWidth ?? 0,
       svg,
     }
