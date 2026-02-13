@@ -1,20 +1,19 @@
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
 import { Moon, Sun } from 'lucide-vue-next'
-import { SidebarMenuButton } from '@/components/ui/sidebar'
+import { Button } from '@/components/ui/button'
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 </script>
 
 <template>
-  <SidebarMenuButton @click="toggleDark()">
+  <Button @click="toggleDark()" size="icon" variant="ghost">
     <transition name="spin-fade" mode="out-in">
       <Sun v-if="!isDark" />
       <Moon v-else />
     </transition>
-    <span> Toggle Theme </span>
-  </SidebarMenuButton>
+  </Button>
 </template>
 
 <style scoped>
